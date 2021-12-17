@@ -4,6 +4,9 @@
   "version": "5.11.0",
   "description": "Starter project template boilerplate based on Webpack with SASS/PostCSS and babel ES6/7 support.",
   "homepage": "https://github.com/mochamadyudi/webpack-boilerplate#readme",
+  "presets": [
+    "@babel/preset-react"
+  ],
   "browserslist": [
     "last 2 versions",
     "> 5%"
@@ -20,8 +23,13 @@
     }
   ],
   "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/plugin-syntax-jsx": "^7.16.5",
+    "@babel/plugin-transform-react-display-name": "^7.16.5",
+    "@babel/plugin-transform-react-jsx": "^7.16.5",
+    "@babel/plugin-transform-react-jsx-self": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-react": "^7.16.5",
     "autoprefixer": "^10.4.0",
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
@@ -34,12 +42,18 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.27.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "gulp": "^4.0.2",
+    "gulp-csso": "^4.0.1",
+    "gulp-debug": "^4.0.0",
+    "gulp-less": "^4.0.1",
+    "gulp-postcss": "^7.0.0",
     "html-webpack-plugin": "^5.5.0",
     "image-minimizer-webpack-plugin": "^2.2.0",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^9.0.0",
+    "less-plugin-npm-import": "^2.1.0",
     "mini-css-extract-plugin": "^2.4.4",
     "postcss": "^8.4.5",
     "postcss-loader": "^6.2.0",
@@ -71,6 +85,7 @@
     "url": "git@github.com:WeAreAthlon/frontend-webpack-boilerplate.git"
   },
   "scripts": {
+    "gulp:watch": "gulp watch",
     "build": "webpack --config configuration/webpack.dev.config.js --mode=development",
     "watch": "webpack --config configuration/webpack.dev.config.js --mode=development --watch",
     "bundle": "npm install && npm run watch",
@@ -82,10 +97,16 @@
   },
   "target": "web",
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/line-clamp": "^0.3.0",
+    "antd": "^4.17.3",
     "framer-motion": "^5.5.4",
+    "less-loader": "^10.2.0",
     "postcss-import": "^14.0.2",
+    "rc-virtual-list": "^3.4.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "style-loader": "^3.3.1"
   }
 }

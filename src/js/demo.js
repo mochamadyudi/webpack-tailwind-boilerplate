@@ -1,4 +1,4 @@
-const demo = () => 'Tavi v0.0.1 - Emkalab.com';
+const demo = () => console.log('%c Tavi v1.0.0 - by Emkalab.dev! ', 'background: #222; color: #fff');
 
 // eslint-disable-next-line no-console
-console.log(demo());
+demo()
