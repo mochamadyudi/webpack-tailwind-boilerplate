@@ -1,16 +1,452 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>Webpack Boilerplate Starter Template</title>
-    <meta name="description" content="Simple starter webpack 5 project template boilerplate supporting SASS/PostCSS, Babel ES7, browser syncing, code linting. Easy project setup having multiple features and developer friendly tools.">
-    <meta name="keywords" content="webpack, webpack-configuration, template, boilerplate, setup, html, css, sass, javascript">
+    <meta name="description"
+          content="Simple starter webpack 5 project template boilerplate supporting SASS/PostCSS, Babel ES7, browser syncing, code linting. Easy project setup having multiple features and developer friendly tools.">
+    <meta name="keywords"
+          content="webpack, webpack-configuration, template, boilerplate, setup, html, css, sass, javascript">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Plamen Nikolov, WeAreAthlon">
-  </head>
-  <body>
-  <h1 class="text-3xl font-bold underline text-red-500">
-    Hello world!
-  </h1>
-  </body>
+</head>
+<body>
+<div class="block w-full relative bg-gray-50">
+    <!-- {{ HEADER }}-->
+    <header class="w-full fixed top-0 left-0 z-40">
+        <div class=" w-full container 2xl:px-14 xl:px-8 px-0 flex items-center flex-col mx-auto">
+            <div class="bg-indigo-900 w-full flex items-center justify-center py-2">
+                <span class="text-white font-semibold text-sm">Free shipping on orders for over IDR 500.000 <a href="">Read More</a></span>
+            </div>
+            <div class="grid grid-cols-12 py-3 items-center w-full bg-white h-full">
+                <!-- logo brand -->
+                <div class="col-span-3">
+                    <a href=""><h1 class="text-3xl text-indigo-900 text-center font-bold">Tavi</h1></a>
+                </div>
+
+                <!-- menu nav -->
+                <div class="col-span-7 flex items-center">
+                    <ul class="flex items-center text-indigo-900 font-regular w-full text-left space-x-24">
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Product</a></li>
+                        <li><a href="">Skin Scholar</a></li>
+                        <li><a href="">News</a></li>
+                        <li><a href="">Skin Quiz</a></li>
+                    </ul>
+                </div>
+
+                <!-- user nav -->
+                <div class="col-span-2 flex justify-center gap-8">
+                    <div class="flex gap-2 ">
+                        <div class="relative flex items-center">
+                            <button>
+                                <img src="./assets/svg/user.svg" alt="" class="w-6 h-6">
+                            </button>
+
+                            <div class="hidden w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+                                <div class="h-full block">
+                                    <div class=" w-full flex flex-col border-b-2 pb-2">
+                                        <p>Profile(s)</p>
+                                    </div>
+                                    <div class="h-52 border-b-2 w-full">
+
+                                    </div>
+                                    <div class="h-32 my-2 bg-red-500"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative flex items-center">
+                            <a>
+                                <img src="./assets/svg/shopping-bag.svg" alt="" class="w-6 h-6">
+                            </a>
+
+                            <div class="w-64  bg-white shadow border absolute top-full translate-y-4 -translate-x-2/4 block p-3">
+                                <div class="h-full block">
+                                    <div class=" w-full flex flex-col border-b-2 pb-2">
+                                        <p>Product(s)</p>
+                                    </div>
+                                    <div class="h-52 border-b-2 w-full">
+
+                                    </div>
+                                    <div class="h-32 my-2 bg-red-500"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button>
+
+                        </button>
+                        <button>
+                            <img src="./assets/svg/bell-24.svg" alt="" class="w-6 h-6">
+                        </button>
+                    </div>
+                    <a href="">
+                        <img src="./assets/svg/search.svg" alt="" class="w-6 h-6">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <div class="min-h-screen w-full pt-16 w-full container 2xl:px-14 xl:px-8 px-0 mx-auto">
+        <div class="relative block">
+            <div class="h-96 w-full  relative block overflow-hidden">
+                <img src="./images/banner/product_2.jpg" alt="" class="w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute ">
+            </div>
+            <div class="py-6 w-full bg-pink-600 flex items-center justify-center">
+                <button class="text-white font-semibold text-lg uppercase tracking-wide flex items-center space-x-4">
+                    <div class="w-4 h-4 bg-white rounded"></div>
+                    <span>All Products</span>
+                </button>
+            </div>
+        </div>
+        <div class="block relative">
+            <div class="mx-auto py-12 space-y-6">
+                <div class="grid grid-cols-12 w-full max-w-7xl px-10 mx-auto gap-4">
+                    <div class="col-span-3 bg-white border">
+                        <div class="h-72 w-full bg-cyan-400 relative overflow-hidden">
+                            <img src="./images/products/product_1.jpg" alt="" class="w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute ">
+                        </div>
+                        <div class=" bg-white flex flex-col p-4">
+                            <div class="w-full">
+                                <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                <div class="flex justify-between items-center">
+                                    <div class="block relative ">
+                                        <p class="text-sm">Blemish Aid Serum</p>
+                                        <span class="text-sm font-bold">RP. 159.000</span>
+                                    </div>
+                                    <div class="relative block shrink-0 flex flex-col">
+
+                                        <button type="button" class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-span-3 bg-white border">
+                        <div class="h-72 w-full bg-cyan-400 relative overflow-hidden">
+                            <img src="./images/products/product_1.jpg" alt="" class="w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute ">
+                        </div>
+                        <div class=" bg-white flex flex-col p-4">
+                            <div class="w-full">
+                                <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                <div class="flex justify-between items-center">
+                                    <div class="block relative ">
+                                        <p class="text-sm">Blemish Aid Serum</p>
+                                        <span class="text-sm font-bold">RP. 159.000</span>
+                                    </div>
+                                    <div class="relative block shrink-0 flex flex-col">
+
+                                        <button type="button" class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-span-3 bg-white border">
+                        <div class="h-72 w-full bg-cyan-400 relative overflow-hidden">
+                            <img src="./images/products/product_1.jpg" alt="" class="w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute ">
+                        </div>
+                        <div class=" bg-white flex flex-col p-4">
+                            <div class="w-full">
+                                <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                <div class="flex justify-between items-center">
+                                    <div class="block relative ">
+                                        <p class="text-sm">Blemish Aid Serum</p>
+                                        <span class="text-sm font-bold">RP. 159.000</span>
+                                    </div>
+                                    <div class="relative block shrink-0 flex flex-col">
+
+                                        <button type="button" class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-span-3 bg-white border">
+                        <div class="h-72 w-full bg-cyan-400 relative overflow-hidden">
+                            <img src="./images/products/product_1.jpg" alt="" class="w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute ">
+                        </div>
+                        <div class=" bg-white flex flex-col p-4">
+                            <div class="w-full">
+                                <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                <div class="flex justify-between items-center">
+                                    <div class="block relative ">
+                                        <p class="text-sm">Blemish Aid Serum</p>
+                                        <span class="text-sm font-bold">RP. 159.000</span>
+                                    </div>
+                                    <div class="relative block shrink-0 flex flex-col">
+
+                                        <button type="button" class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-span-3 bg-white border">
+                        <div class="h-72 w-full bg-cyan-400 relative overflow-hidden">
+                            <img src="./images/products/product_1.jpg" alt="" class="w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute ">
+                        </div>
+                        <div class=" bg-white flex flex-col p-4">
+                            <div class="w-full">
+                                <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                <div class="flex justify-between items-center">
+                                    <div class="block relative ">
+                                        <p class="text-sm">Blemish Aid Serum</p>
+                                        <span class="text-sm font-bold">RP. 159.000</span>
+                                    </div>
+                                    <div class="relative block shrink-0 flex flex-col">
+
+                                        <button type="button" class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-span-3 bg-white border">
+                        <div class="h-72 w-full bg-cyan-400 relative overflow-hidden">
+                            <img src="./images/products/product_1.jpg" alt="" class="w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute ">
+                        </div>
+                        <div class=" bg-white flex flex-col p-4">
+                            <div class="w-full">
+                                <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                <div class="flex justify-between items-center">
+                                    <div class="block relative ">
+                                        <p class="text-sm">Blemish Aid Serum</p>
+                                        <span class="text-sm font-bold">RP. 159.000</span>
+                                    </div>
+                                    <div class="relative block shrink-0 flex flex-col">
+
+                                        <button type="button" class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-span-3 bg-white border">
+                        <div class="h-72 w-full bg-cyan-400 relative overflow-hidden">
+                            <img src="./images/products/product_1.jpg" alt="" class="w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute ">
+                        </div>
+                        <div class=" bg-white flex flex-col p-4">
+                            <div class="w-full">
+                                <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                <div class="flex justify-between items-center">
+                                    <div class="block relative ">
+                                        <p class="text-sm">Blemish Aid Serum</p>
+                                        <span class="text-sm font-bold">RP. 159.000</span>
+                                    </div>
+                                    <div class="relative block shrink-0 flex flex-col">
+
+                                        <button type="button" class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-span-3 bg-white border">
+                        <div class="h-72 w-full bg-cyan-400 relative overflow-hidden">
+                            <img src="./images/products/product_1.jpg" alt="" class="w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute ">
+                        </div>
+                        <div class=" bg-white flex flex-col p-4">
+                            <div class="w-full">
+                                <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                <div class="flex justify-between items-center">
+                                    <div class="block relative ">
+                                        <p class="text-sm">Blemish Aid Serum</p>
+                                        <span class="text-sm font-bold">RP. 159.000</span>
+                                    </div>
+                                    <div class="relative block shrink-0 flex flex-col">
+
+                                        <button type="button" class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-span-3 bg-white border">
+                        <div class="h-72 w-full bg-cyan-400 relative overflow-hidden">
+                            <img src="./images/products/product_1.jpg" alt="" class="w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute ">
+                        </div>
+                        <div class=" bg-white flex flex-col p-4">
+                            <div class="w-full">
+                                <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                <div class="flex justify-between items-center">
+                                    <div class="block relative ">
+                                        <p class="text-sm">Blemish Aid Serum</p>
+                                        <span class="text-sm font-bold">RP. 159.000</span>
+                                    </div>
+                                    <div class="relative block shrink-0 flex flex-col">
+
+                                        <button type="button" class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-span-3 bg-white border">
+                        <div class="h-72 w-full bg-cyan-400 relative overflow-hidden">
+                            <img src="./images/products/product_1.jpg" alt="" class="w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute ">
+                        </div>
+                        <div class=" bg-white flex flex-col p-4">
+                            <div class="w-full">
+                                <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                <div class="flex justify-between items-center">
+                                    <div class="block relative ">
+                                        <p class="text-sm">Blemish Aid Serum</p>
+                                        <span class="text-sm font-bold">RP. 159.000</span>
+                                    </div>
+                                    <div class="relative block shrink-0 flex flex-col">
+
+                                        <button type="button" class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-span-3 bg-white border">
+                        <div class="h-72 w-full bg-cyan-400 relative overflow-hidden">
+                            <img src="./images/products/product_1.jpg" alt="" class="w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute ">
+                        </div>
+                        <div class=" bg-white flex flex-col p-4">
+                            <div class="w-full">
+                                <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                <div class="flex justify-between items-center">
+                                    <div class="block relative ">
+                                        <p class="text-sm">Blemish Aid Serum</p>
+                                        <span class="text-sm font-bold">RP. 159.000</span>
+                                    </div>
+                                    <div class="relative block shrink-0 flex flex-col">
+
+                                        <button type="button" class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-span-3 bg-white border">
+                        <div class="h-72 w-full bg-cyan-400 relative overflow-hidden">
+                            <img src="./images/products/product_1.jpg" alt="" class="w-full h-full object-cover transform translate-y-2/4 translate-x-2/4 -top-1/2 -left-1/2 absolute ">
+                        </div>
+                        <div class=" bg-white flex flex-col p-4">
+                            <div class="w-full">
+                                <h3 class="text-md font-semibold">Don't Spot Me Now</h3>
+                                <div class="flex justify-between items-center">
+                                    <div class="block relative ">
+                                        <p class="text-sm">Blemish Aid Serum</p>
+                                        <span class="text-sm font-bold">RP. 159.000</span>
+                                    </div>
+                                    <div class="relative block shrink-0 flex flex-col">
+
+                                        <button type="button" class="text-white text-sm flex items-center  py-2 rounded bg-red-500 truncate px-4">
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <footer class="px-24 py-16 bg-pink-100">
+            <div class="flex">
+                <div class="w-2/3 text-indigo-900 space-y-24">
+                    <!-- footer nav -->
+                    <div class="space-y-4">
+                        <h1 class="text-xl font-bold">INFO</h1>
+                        <div class="flex gap-16">
+                            <a href="">
+                                <span class="font-normal text-lg">TAVI'S TALE</span>
+                            </a>
+                            <a href="">
+                                <span class="font-normal text-lg">STORES</span>
+                            </a>
+                            <a href="">
+                                <span class="font-normal text-lg">FAQ</span>
+                            </a>
+                            <a href="">
+                                <span class="font-normal text-lg">PRIVACY POLICY</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- footer social -->
+                    <div>
+                        <div class="flex gap-4">
+                            <a href="">
+                                <div class="w-8 h-8">
+                                    <img src="./assets/svg/instagram-fill.svg" alt="" class="w-full h-full">
+                                </div>
+                            </a>
+
+                            <a href="">
+                                <div class="w-8 h-8">
+                                    <img src="./assets/svg/logo-youtube.svg" alt="" class="w-full h-full">
+                                </div>
+                            </a>
+
+                            <a href="">
+                                <div class="w-8 h-8">
+                                    <img src="./assets/svg/facebook-f.svg" alt="" class="w-full h-full">
+                                </div>
+                            </a>
+                        </div>
+                        <p class="text-sm">Hak Cipta &copy; Tavi 2020</p>
+                    </div>
+                </div>
+
+                <div class="w-1/3 space-y-8">
+                    <div>
+                        <p class="text-4xl text-indigo-900 font-bold">
+                            Ya'll Curious Bunch,
+                        </p>
+                        <p class="text-4xl text-indigo-900 font-bold">
+                            Join Our Community.
+                        </p>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <input type="text" class="w-full rounded-full text-indigo-900 bg-blue-200 py-2 px-4 text-xs placeholder-indigo-900 ring-0 border-0 focus:ring-0 focus:border-0" placeholder="Your Email...">
+                        <button class="text-sm text-white bg-pink-500 px-6 py-1 rounded-full">SUBMIT</button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+</body>
 </html>

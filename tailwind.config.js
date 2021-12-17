@@ -1,5 +1,4 @@
-
-const { colors: defaultColors } = require('tailwindcss/defaultTheme')
+const defaultColors = require('tailwindcss/colors')
 const colors = {
   ...defaultColors,
   ...{
@@ -9,15 +8,16 @@ const colors = {
     },
     "scheme": {
       "yellow": "#F1CC00",
+      "whitesmoke": "#fffde9",
       "purple":"#884dca",
       "purple-light":"#875db8",
       "orange": "#FF4800",
-      "green": "rgb(85,184,42)",
+      "green":"#224002",
+      "green-light":"#7ab850",
+      "green-fresh":"#509B10",
       "gray": "#3e3e3e",
       "red": "rgb(217,46,82)",
       "red-light": "rgb(232, 93, 117)",
-      // "green": "#4EBFA8",
-      "dark-green": "#72CCB9",
       "dark-blue": "#00016B",
       "green-85": "rgba(114,204,185, .85)",
       "primary": "#1d1f32",
@@ -31,49 +31,148 @@ const colors = {
       "blue": "#3db4f2",
       "blue-light": "#53bdf5",
       "blue-dark": "#338cbc",
+      "dark-green": "#0F3F05",
     },
   },
 }
 module.exports = {
-  // corePlugins: {
-  //   fontFamily: false,
-  // },
-  content: ["./src/dist/*.html",'./src/*.html'],
-  darkMode: 'class', // or 'media' or 'class'
+  content: [
+    "./dist/*.html",
+    "./dist/**/*.html",
+    "./dist/**/**/*.html",
+    './src/*.html',
+    './src/**/*.html',
+    './src/**/**/*.html',
+  ],
+  purge: [
+    "./dist/*.html",
+    "./dist/**/*.html",
+    "./dist/**/**/*.html",
+    './src/*.html',
+    './src/**/*.html',
+    './src/**/**/*.html',
+  ],
+  darkMode: "class", // or 'media' or 'class'
   theme: {
-
     fontFamily: {
       'sans': ['ui-sans-serif', 'system-ui'],
       'serif': ['ui-serif', 'Georgia'],
       'mono': ['ui-monospace', 'SFMono-Regular'],
       'display': 'var(--font-family)',
-      'body': ['DIN2014', 'sans-serif'],
+      'body': ['Excon'],
+      "excon": ["Excon"]
     },
+    extend: {},
+    colors: colors,
+    screens: {
+      'xs': '375px',
+      '2xs': '425px',
+      'sm': '640px',
+      // => @media (min-width: 640px) { ... }
 
-    extend: {
+      'md': '768px',
+      // => @media (min-width: 768px) { ... }
+
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'xl': '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
     },
-    colors: colors
+    rotate: {
+      '-180': '-180deg',
+      '-90': '-90deg',
+      '-45': '-45deg',
+      '-54': '-54deg',
+      '0': '0',
+      '45': '45deg',
+      '54': '54deg',
+      '90': '90deg',
+      '135': '135deg',
+      '180': '180deg',
+      '270': '270deg',
+    },
+    height: (theme) => ({
+      auto: 'auto',
+      ...theme('spacing'),
+      '1/2': '50%',
+      '1/3': '33.333333%',
+      '2/3': '66.666667%',
+      '1/4': '25%',
+      '2/4': '50%',
+      '3/4': '75%',
+      '1/5': '20%',
+      '2/5': '40%',
+      '3/5': '60%',
+      '4/5': '80%',
+      '1/6': '16.666667%',
+      '2/6': '33.333333%',
+      '3/6': '50%',
+      '4/6': '66.666667%',
+      '5/6': '83.333333%',
+      '100': '100px',
+      '200': '200px',
+      '300': '300px',
+      '400': '400px',
+      '446': '446px',
+      '500': '500px',
+      '550': '550px',
+      '600': '600px',
+      '660': '660px',
+      '700': '700px',
+      '788': '788px',
+      '800': '800px',
+      '900': '900px',
+      full: '100%',
+      screen: '100vh'
+    }),
+    width: (theme) => ({
+      auto: 'auto',
+      ...theme('spacing'),
+      '1/2': '50%',
+      '1/3': '33.333333%',
+      '2/3': '66.666667%',
+      '1/4': '25%',
+      '2/4': '50%',
+      '3/4': '75%',
+      '1/5': '20%',
+      '2/5': '40%',
+      '3/5': '60%',
+      '4/5': '80%',
+      '1/6': '16.666667%',
+      '2/6': '33.333333%',
+      '3/6': '50%',
+      '4/6': '66.666667%',
+      '5/6': '83.333333%',
+      '100': '100px',
+      '200': '200px',
+      '300': '300px',
+      '400': '400px',
+      '446': '446px',
+      '500': '500px',
+      '600': '600px',
+      '660': '660px',
+      '700': '700px',
+      '800': '800px',
+      '900': '900px',
+      full: '100%',
+      screen: '100vh'
+    }),
   },
-  extend: {
-    animation: {
-      fadeIn: "fadeIn 2s ease-in forwards"
-    },
-    keyframes: {
-      fadeIn: {
-        "0%": { opacity: 0 },
-        "100%": { opacity: 1 }
-      }
+  variants: {
+    extend: {
+
+      fontFamily: ['hover', 'focus'],
     }
   },
-
-  variants: {
-    animation: ["motion-safe"],
+  corePlugins: {
+    fontFamily: false,
   },
   plugins: [
     require('@tailwindcss/line-clamp'),
     require('@tailwindcss/forms'),
-    // require('@tailwindcss/aspect-ratio'),
-    // require('tailwindcss'),
-    // require('tailwindcss-children'),
   ],
 }

@@ -85,6 +85,7 @@
     "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/line-clamp": "^0.3.0",
     "framer-motion": "^5.5.4",
-    "postcss-import": "^14.0.2"
+    "postcss-import": "^14.0.2",
+    "style-loader": "^3.3.1"
   }
 }
