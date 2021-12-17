@@ -1,6 +1,6 @@
-# Webpack 5 Boilerplate Template
+# Webpack 5 Boilerplate Tailwind
 
-![Maintenance](https://img.shields.io/maintenance/yes/2021?logo=github)
+![Maintenance](https://img.shields.io/maintenance/No/2021?logo=github)
 ![webpack-current](https://img.shields.io/badge/webpack-v5.64.0-green?logo=webpack)
 ![node-current (scoped)](https://img.shields.io/node/v/@weareathlon/frontend-webpack-boilerplate)
 [![Build Status](https://app.travis-ci.com/WeAreAthlon/frontend-webpack-boilerplate.svg?branch=master)](https://app.travis-ci.com/github/WeAreAthlon/frontend-webpack-boilerplate)
@@ -10,17 +10,10 @@
 [![npm](https://img.shields.io/npm/dm/@weareathlon/frontend-webpack-boilerplate)](https://www.npmjs.com/package/@weareathlon/frontend-webpack-boilerplate)
 [![GitHub License](https://img.shields.io/github/license/WeAreAthlon/frontend-webpack-boilerplate)](https://github.com/WeAreAthlon/frontend-webpack-boilerplate/blob/master/LICENSE)
 
-![Front-end Webpack Boilerplate](https://repository-images.githubusercontent.com/96102257/4be7b600-61f1-11e9-9ebf-67b17d5ba125)
-
-## Demo
-
-* [Demo page demonstrating building - SASS, JavaScript, Images, Fonts, HTML](https://weareathlon.github.io/frontend-webpack-boilerplate/)
-
 Table of Contents
 =================
 
    * [Webpack 5 Boilerplate Template](#webpack-5-boilerplate-template)
-      * [Demo](#demo)
       * [Features](#features)
       * [Requirements](#requirements)
    * [Setup](#setup)
