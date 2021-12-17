@@ -1,22 +1,22 @@
 {
-  "author": "WeAreAthlon <hello@weareathlon.com> (https://www.weareathlon.com)",
-  "name": "@weareathlon/frontend-webpack-boilerplate",
+  "author": "yuyuid <myudisobari12@gmail.com> (https://yuyuid.id)",
+  "name": "@mochamadyudi/webpack-boilerplate",
   "version": "5.11.0",
   "description": "Starter project template boilerplate based on Webpack with SASS/PostCSS and babel ES6/7 support.",
-  "homepage": "https://github.com/WeAreAthlon/frontend-webpack-boilerplate#readme",
+  "homepage": "https://github.com/mochamadyudi/webpack-boilerplate#readme",
   "browserslist": [
     "last 2 versions",
     "> 5%"
   ],
   "bugs": {
-    "url": "https://github.com/WeAreAthlon/frontend-webpack-boilerplate/issues",
-    "email": "plamen@athlonsofia.com"
+    "url": "https://github.com/mochamadyudi/webpack-boilerplate/issues",
+    "email": "myudisobari12@gmail.com"
   },
   "contributors": [
     {
-      "name": "Plamen Nikolov",
-      "email": "me@pnikoloff.com",
-      "url": "https://pnikoloff.com"
+      "name": "Mochamad yudi Sobari",
+      "email": "myudisobari12@gmail.com",
+      "url": "https://yuyuid.id"
     }
   ],
   "devDependencies": {
