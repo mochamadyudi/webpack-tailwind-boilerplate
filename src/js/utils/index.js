@@ -1,7 +1,7 @@
+import Constants from '../constants';
+import { message } from 'antd';
+
 class Utils {
-
-
-
 
   static htmlToElement(html) {
     var template = document.createElement('template');
@@ -9,6 +9,34 @@ class Utils {
     template.innerHTML = html;
     return template.content.firstChild;
   }
+
+  static AddStylesObject(el = null , objStyle = {}){
+    if(el === null) return null;
+    try{
+      for(let prop of Object.keys(objStyle)){
+        el.style[prop.toString()] = objStyle[prop.toString()];
+      }
+    }catch(err){
+      this.message('error',err.message)
+    }
+  }
+
+  /**
+   * @define - Message Antd
+   */
+  static message(type = 'success', msg = ''){
+    switch (type){
+      case Constants.ANTD.MESSAGE.SUCCESS:
+        return message.success(msg)
+      case Constants.ANTD.MESSAGE.ERROR :
+        return message.error(msg)
+      case Constants.ANTD.MESSAGE.WARNING :
+        return message.warning(msg)
+      default:
+        return message.success(msg)
+    }
+  }
+
   /**
    *
    * @param a

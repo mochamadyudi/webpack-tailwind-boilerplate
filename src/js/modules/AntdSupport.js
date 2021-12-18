@@ -3,20 +3,35 @@ import ReactDOMServer from 'react-dom/server';
 
 
 import { message, Dropdown, Spin,Skeleton } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
 import { renderToString } from 'react-dom/server'
 import Constants from '../constants';
 // parts[i] = renderToString(<Skeleton key={i}>{parts[i]}</Skeleton>)
 
 class AntdSupport {
-  constructor(props) {
+  constructor(props = {}) {
     this.state = {
       ...props,
       Skeleton:{
         ...props?.Skeleton,
         active:true,
         loading:true,
+        block: true,
+        shape:"default",
+        size: "default",
+        avatar:false,
         paragraph:{
+          ...props?.Skeleton?.paragraph,
           rows:4
+        }
+      },
+      Loading_spinner:{
+        className: "w-full h-full flex items-center justify-center",
+        style:{
+          fontSize: "60px",
+          opacity: 1,
+          position:"relative",
+          zIndex:5,
         }
       },
 
@@ -44,21 +59,93 @@ class AntdSupport {
     }
   }
 
-  Skeleton(parentElement = null,childType="first",rows=4){
-    if (parentElement === null) return false;
-    const element = ReactDOMServer.renderToStaticMarkup(Skeleton({...this.state.Skeleton}))
-    switch (childType){
-      case "first":
-        parentElement.prepend(Emkalab.Utils.htmlToElement(element))
-        break;
-      case "last":
-        parentElement.append(Emkalab.Utils.htmlToElement(element))
-        break;
-      default:
-        parentElement.append(Emkalab.Utils.htmlToElement(element))
 
+
+  Skeleton(selectorAll = null){
+    if (selectorAll === null) return false;
+    let el = selectorAll.split('-')[selectorAll.split('-').length - 1]
+
+    try{
+      switch (el){
+        case "list":
+          try{
+            document.querySelectorAll(`${selectorAll}`).forEach((elem)=> {
+              let times
+              try{
+                times = parseInt(elem.getAttribute('data-time'))
+              }catch(err){
+                times = .5
+              }
+
+
+              let elemSkeleton = ReactDOMServer.renderToStaticMarkup(Skeleton({...this.state.Skeleton}))
+              elem.prepend(Emkalab.Utils.htmlToElement(elemSkeleton))
+              setTimeout(function(){
+                elem.firstElementChild.remove()
+                elem.lastElementChild.classList.remove('hidden')
+              },times)
+            })
+
+          }catch(err){
+            this.message('error',err.message)
+          }
+          break;
+        case "input":
+        case "image":
+          try{
+
+
+
+            // this.state.Skeleton = {
+            //   ...this.state.Skeleton,
+            //   avatar: true,
+            //   shape: "circle",
+            //   size: "large"
+            // }
+            // console.log(document.querySelectorAll(`${selectorAll}`),this.state.Skeleton);
+            document.querySelectorAll(`${selectorAll}`).forEach((elem)=> {
+              let times
+              try{
+                times = parseInt(elem.getAttribute('data-time'))
+              }catch(err){
+                times = .5
+              }
+              // let elemSkeleton = ReactDOMServer.renderToStaticMarkup(LoadingOutlined.render())
+              this.LoadingSpinner(elem)
+              // elem.prepend(Emkalab.Utils.htmlToElement(elemSkeleton))
+              setTimeout(function(){
+                elem.firstElementChild.remove()
+                elem.lastElementChild.classList.remove('hidden')
+              },times)
+            })
+
+          }catch(err){
+            this.message('error',err.message)
+          }
+          break;
+        case "button":
+        default:
+      }
+    }catch(err){
+      this.message('error',err.message)
     }
   }
+
+  LoadingSpinner(parentElement = null){
+    if (parentElement === null) return null
+    try{
+      let div = document.createElement('div')
+      div.className = this.state.Loading_spinner.className
+      let htmlEl = Emkalab.Utils.htmlToElement(ReactDOMServer.renderToStaticMarkup(LoadingOutlined.render()))
+      Emkalab.Utils.AddStylesObject(htmlEl,this.state.Loading_spinner.style)
+      div.append(htmlEl)
+      parentElement.prepend(div)
+    }catch(err){
+      this.message('error',err.message)
+    }
+
+  }
+
 
   static DropdownMenu(menuText='', onClick = ()=> {}, parentElement = null){
 
